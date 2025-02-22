@@ -269,14 +269,14 @@
             cancionNueva = canciones[i];
             musica.src = cancionNueva.src;
             reproductormsg.innerText = `Reproduciendo: ${cancionNueva.descripcion}`;
-          }
-        }else{
+          }else{
             cancionNueva = canciones[Math.floor(Math.random() * canciones.length)];
             musica.src = cancionNueva.src;
             reproductormsg.innerText = `Reproduciendo: ${cancionNueva.descripcion}`;
         }
+        }
     }
-
+    }
     function reproductorVisibilidad(){
       reproductor.classList.toggle("invisible");
     }
