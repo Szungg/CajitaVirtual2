@@ -12,7 +12,7 @@
       }
 
       body{
-        background-image: url(Imagenes/cardboard-box-textured-background-image-free-photo.jpeg);
+        background-image: url('../Imagenes/cardboard-box-textured-background-image-free-photo.jpeg');
         background-color: color(srgb red green blue);
         background-size:cover;
         background-repeat: no-repeat;        
@@ -54,7 +54,7 @@
       }
 
       #cabecera {
-        background-image: url(Imagenes/paper-box-texture-cardboard-box-texture-background-photo.jpg);
+        background-image: url('../Imagenes/paper-box-texture-cardboard-box-texture-background-photo.jpg');
         color: white;
         border: 6px solid rgb(0, 0, 0);
         padding: 10px;
@@ -65,7 +65,7 @@
       }
       
       #varios {
-          background-image: url(Imagenes/textura-del-fondo-de-la-hoja-papel-blanco-desmenuzada-bloc-notas-carta-desmoronada-184193677.webp);
+          background-image: url('../Imagenes/textura-del-fondo-de-la-hoja-papel-blanco-desmenuzada-bloc-notas-carta-desmoronada-184193677.webp');
           border: 6px solid lightgray;
           border-style:hidden;
           padding: 20px;
@@ -112,7 +112,7 @@
       }
 
       #barra-nav {
-        background-image: url(Imagenes/pngtree-background-with-textured-pencil-sketch-image_13810925.png);
+        background-image: url('../Imagenes/pngtree-background-with-textured-pencil-sketch-image_13810925.png');
         background-color: rgb(219, 175, 139);
         color: white;
         padding: 10px;
@@ -166,7 +166,7 @@
       <button id="reproductor" onclick="reproductorVisibilidad()">Reproductor</button>
       <div id="musiquita" class="invisible">
           <video autoplay controls>
-            <source src="Videos/videoplayback.mp4c" type="mp4c">
+            <source src="../Videos/videoplayback.mp4c" type="mp4c">
             Tu navegador no soporta la reproducción de videos.
           </video>
           <h2>Musiquita</h2>
@@ -177,7 +177,7 @@
           <button id="cambiarCancion" onclick="cambiarCancion()">Cambiar cancion</button>
       </div>
     </div>
-    <img id="idea" src="Imagenes/dibujo-lapiz-hojas-papel-vintage-fondo-dibujo-artistico-ilustracion-naturaleza_94064-45331.jpg" alt="Aqui deberia haber una imagencilla">
+    <img id="idea" src="'../Imagenes/dibujo-lapiz-hojas-papel-vintage-fondo-dibujo-artistico-ilustracion-naturaleza_94064-45331.jpg' alt="Aqui deberia haber una imagencilla">
     <div id="barra-nav">
       <button id="nuevaIdea" onclick="generarImagen()">Generar</button>
       <button id="quitarIdea" onclick="quitarIdea()">Quitar idea</button>
@@ -186,26 +186,26 @@
 </body>
 <script>
     let imagenes = [
-    { cod: 1, tema: "fotosGero", descripcion: "pajarillo", src: "Imagenes/P1080103.JPG" },
-    { cod: 2, tema: "fotosGero", descripcion: "nekomontaña", src: "Imagenes/P1080506.JPG" },
-    { cod: 3, tema: "fotosGero", descripcion: "neko", src: "Imagenes/P1080536.JPG" },
-    { cod: 4, tema: "arcane", descripcion: "salto", src: "Imagenes/20241125_234816.jpg" },
-    { cod: 5, tema: "arcane", descripcion: "jinxpelazo", src: "Imagenes/20241125_235005.jpg" },
-    { cod: 6, tema: "arcane", descripcion: "zeppelin", src: "Imagenes/20241126_152435.jpg" },
-    { cod: 7, tema: "arcane", descripcion: "fantastic_vi", src: "Imagenes/20241208_212902.jpg" },
-    { cod: 7, tema: "arcane", descripcion: "fantastic_cait", src: "Imagenes/20241208_212904.jpg" },
-    { cod: 8, tema: "arcane", descripcion: "rata_con_bigote", src: "Imagenes/20241219_184518.jpg" },
+    { cod: 1, tema: "fotosGero", descripcion: "pajarillo", src: "../Imagenes/P1080103.JPG" },
+    { cod: 2, tema: "fotosGero", descripcion: "nekomontaña", src: "../Imagenes/P1080506.JPG" },
+    { cod: 3, tema: "fotosGero", descripcion: "neko", src: "../Imagenes/P1080536.JPG" },
+    { cod: 4, tema: "arcane", descripcion: "salto", src: "../Imagenes/20241125_234816.jpg" },
+    { cod: 5, tema: "arcane", descripcion: "jinxpelazo", src: "../Imagenes/20241125_235005.jpg" },
+    { cod: 6, tema: "arcane", descripcion: "zeppelin", src: "../Imagenes/20241126_152435.jpg" },
+    { cod: 7, tema: "arcane", descripcion: "fantastic_vi", src: "../Imagenes/20241208_212902.jpg" },
+    { cod: 7, tema: "arcane", descripcion: "fantastic_cait", src: "../Imagenes/20241208_212904.jpg" },
+    { cod: 8, tema: "arcane", descripcion: "rata_con_bigote", src: "../Imagenes/20241219_184518.jpg" },
     //Agregar imagenes
     ];
     let canciones = [
-    { cod: 1, tema: "arcane", descripcion: "Amazing", src: "Videos/videoplayback.mp4" },
-    { cod: 2, tema: "arcane", descripcion: "Days of Thunder", src: "Videos/The Midnight - Days of Thunder.mp4" },
-    { cod: 3, tema: "arcane", descripcion: "Every Breath You Take", src: "Videos/The Police - Every Breath You Take (Official Music Video).mp4" },
+    { cod: 1, tema: "arcane", descripcion: "Amazing", src: "../Videos/videoplayback.mp4" },
+    { cod: 2, tema: "arcane", descripcion: "Days of Thunder", src: "../Videos/The Midnight - Days of Thunder.mp4" },
+    { cod: 3, tema: "arcane", descripcion: "Every Breath You Take", src: "../Videos/The Police - Every Breath You Take (Official Music Video).mp4" },
     //Agregar canciones
     ]
 
     let imagenAux = [
-    { cod: "999", tema: "vacio", descripcion: "No quedan imagenes", src: "Imagenes/dibujo-lapiz-hojas-papel-vintage-fondo-dibujo-artistico-ilustracion-naturaleza_94064-45331.jpg" },
+    { cod: "999", tema: "vacio", descripcion: "No quedan imagenes", src: "../Imagenes/dibujo-lapiz-hojas-papel-vintage-fondo-dibujo-artistico-ilustracion-naturaleza_94064-45331.jpg" },
     ];
     let imagen = document.querySelector("#idea");
     let parrafin = document.querySelector("p");
