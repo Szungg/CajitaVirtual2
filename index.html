@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajita Virtual</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+
+      .invisible{
+        display: none;
+      }
+
+      body{
+        background-image: url(../Imagenes/cardboard-box-textured-background-image-free-photo.jpeg);
+        background-color: color(srgb red green blue);
+        background-size:cover;
+        background-repeat: no-repeat;        
+      }
+
+      h1{
+        color: black;
+        background-color: rgba(255, 228, 196, 0.199);
+        text-transform:uppercase;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Añade la nueva fuente aquí */
+      }
+
+      #varios p{
+        display: inline-block;
+      }
+
+      img {
+        width: 100%;        
+        border-radius: 20px;
+      }
+
+      video{  
+        display: none;      
+        size: 10px;
+        text-align: right;
+      }
+
+      #controlVolumen{
+        cursor: pointer;
+        text-align: right;       
+      }
+
+      #controlVolumen:hover{
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+        background: #3071a9;
+        border-radius: 30px;
+      }
+
+      #cabecera {
+        background-image: url(../Imagenes/paper-box-texture-cardboard-box-texture-background-photo.jpg);
+        color: white;
+        border: 6px solid rgb(0, 0, 0);
+        padding: 10px;
+        text-align: center;
+        background-size:cover;
+        background-position: center;
+        background-repeat: no-repeat;        
+      }
+      
+      #varios {
+          background-image: url(../Imagenes/textura-del-fondo-de-la-hoja-papel-blanco-desmenuzada-bloc-notas-carta-desmoronada-184193677.webp);
+          border: 6px solid lightgray;
+          border-style:hidden;
+          padding: 20px;
+          color: black;
+          font-size: large;
+          border-radius: 10px;
+          border-color: white;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          background-size: cover;
+          background-repeat: no-repeat;
+      }
+
+      #musiquita{
+        background-color: #000;
+        color: white;
+        float: right;
+        margin: 20px;
+        text-align: center;
+        text-decoration: solid;
+        border-radius: 10%;
+        border: 10px solid rgb(248, 243, 243);
+        border-style:groove;
+      }
+
+      #reproduciendo{
+        text-align: center;
+      }
+      /*
+      #tv {
+        position: relative;
+        width: 350px;
+        height: 250px;
+        background: white;
+        border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+        color: white;
+        box-shadow: 5px 5px rgba(0,0,0,.15);
+        transition: all .4s ease;
+      }
+      */
+      #varios:hover {
+        border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+        box-shadow: 5px 5px rgba(0,0,0,.25);
+      }
+
+      #barra-nav {
+        background-image: url(../Imagenes/pngtree-background-with-textured-pencil-sketch-image_13810925.png);
+        background-color: rgb(219, 175, 139);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-radius: 15px;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin-inline: 10%;
+        background-color: #209b76;
+        color: white;
+        border:bisque;
+        border-radius: 20px;
+        cursor: pointer;
+        border: 1px solid rgb(8, 8, 8);
+        border-style: outset;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      button#quitarIdea:hover{
+        background-color: #971324;
+      }
+
+      button#cambiarCancion{
+        border-width: 5px;
+        margin: 5px;
+        border-style: solid;
+      }
+
+      button#reproductor{
+        float: right;
+        margin: 0;
+        border: 2px solid rgb(8, 8, 8);
+      }
+      
+    </style>
+</head>
+<body>
+    <div id="cabecera">
+      <h1>Cajita Virtual</h1>
+    </div>
+    <div id="varios">
+      <p></p>
+      <button id="reproductor" onclick="reproductorVisibilidad()">Reproductor</button>
+      <div id="musiquita" class="invisible">
+          <video autoplay controls>
+            <source src="Videos/videoplayback.mp4c" type="mp4c">
+            Tu navegador no soporta la reproducción de videos.
+          </video>
+          <h2>Musiquita</h2>
+          <p id="reproduciendo">Reproduciendo: Fantastic</p><br>
+          <audio id="miAudio" src="Videos/videoplayback.mp4" autoplay>
+          </audio>
+          <input type="range" id="controlVolumen" min="0" max="1" step="0.1" value="0.5" oninput="cambiarVolumen(this.value)">
+          <button id="cambiarCancion" onclick="cambiarCancion()">Cambiar cancion</button>
+      </div>
+    </div>
+    <img id="idea" src="Imagenes/dibujo-lapiz-hojas-papel-vintage-fondo-dibujo-artistico-ilustracion-naturaleza_94064-45331.jpg" alt="Aqui deberia haber una imagencilla">
+    <div id="barra-nav">
+      <button id="nuevaIdea" onclick="generarImagen()">Generar</button>
+      <button id="quitarIdea" onclick="quitarIdea()">Quitar idea</button>
+      <button id="pedirIdea" onclick="pedirIdea()">Porfa</button>
+    </div>
+</body>
+<script>
+    let imagenes = [
+    { cod: 1, tema: "fotosGero", descripcion: "pajarillo", src: "../Imagenes/P1080103.JPG" },
+    { cod: 2, tema: "fotosGero", descripcion: "nekomontaña", src: "../Imagenes/P1080506.JPG" },
+    { cod: 3, tema: "fotosGero", descripcion: "neko", src: "../Imagenes/P1080536.JPG" },
+    { cod: 4, tema: "arcane", descripcion: "salto", src: "../Imagenes/20241125_234816.jpg" },
+    { cod: 5, tema: "arcane", descripcion: "jinxpelazo", src: "../Imagenes/20241125_235005.jpg" },
+    { cod: 6, tema: "arcane", descripcion: "zeppelin", src: "../Imagenes/20241126_152435.jpg" },
+    { cod: 7, tema: "arcane", descripcion: "fantastic_vi", src: "../Imagenes/20241208_212902.jpg" },
+    { cod: 7, tema: "arcane", descripcion: "fantastic_cait", src: "../Imagenes/20241208_212904.jpg" },
+    { cod: 8, tema: "arcane", descripcion: "rata_con_bigote", src: "../Imagenes/20241219_184518.jpg" },
+    //Agregar imagenes
+    ];
+    let canciones = [
+    { cod: 1, tema: "arcane", descripcion: "Amazing", src: "../Videos/videoplayback.mp4" },
+    { cod: 2, tema: "arcane", descripcion: "Days of Thunder", src: "../Videos/The Midnight - Days of Thunder.mp4" },
+    { cod: 3, tema: "arcane", descripcion: "Every Breath You Take", src: "../Videos/The Police - Every Breath You Take (Official Music Video).mp4" },
+    //Agregar canciones
+    ]
+
+    let imagenAux = [
+    { cod: "999", tema: "vacio", descripcion: "No quedan imagenes", src: "../Imagenes/dibujo-lapiz-hojas-papel-vintage-fondo-dibujo-artistico-ilustracion-naturaleza_94064-45331.jpg" },
+    ];
+    let imagen = document.querySelector("#idea");
+    let parrafin = document.querySelector("p");
+    let musica = document.querySelector("audio");
+    let reproductor = document.querySelector("#musiquita");
+    let reproductormsg = document.querySelector("p#reproduciendo");
+
+    function generarImagen(){
+        let nuevaIdea = obtenerIdea();
+        imagen.src = nuevaIdea.src;
+        imagen.alt = nuevaIdea.descripcion;
+        parrafin.innerHTML = `Imagen generada: ${imagen.alt}`;
+    }
+
+    function quitarIdea(){
+        let codigo = prompt("Que imagen quieres eliminar?","pajarillo");
+        
+        for(let i = 0;i<imagenes.length;i++){
+          if(imagenes[i].descripcion === codigo){
+            imagenes.splice(i,1);
+          }
+        }
+    }
+
+    function pedirIdea(){
+      let codigo = prompt("Que imagen quieres?","pajarillo");
+
+      for(let i = 0;i<imagenes.length;i++){
+          if(imagenes[i].descripcion === codigo){
+            imagen.src = imagenes[i].src;
+            imagen.alt = nuevaIdea[i].descripcion;
+            parrafin.innerText = codigo;
+          }
+      }
+    }
+
+    function obtenerIdea() {
+          let indiceAleatorio = Math.floor(Math.random() * imagenes.length);
+          if(imagenes.length==0){
+            idea = imagenAux[0];
+          }else{          
+          idea = imagenes[indiceAleatorio];
+          } 
+
+        return idea;
+      }
+
+    function cambiarVolumen(valor) {
+        let audio = document.getElementById('miAudio');
+        audio.volume = valor;
+    }
+
+    function cambiarCancion(){
+      pass = prompt("Contraseña:","pista: que es gero?");
+      if (pass=="gero es el mejo"){
+        cod = prompt("Que cancion quieres?");
+
+        for(let i = 0;i<canciones.length;i++){
+          if(canciones[i].descripcion === cod ||canciones[i].cod === cod){
+            canciones.src = canciones[i].src;
+            parrafin.innerText = canciones[i].cod;
+          }
+        }
+        cancionNueva = canciones[Math.floor(Math.random() * canciones.length)];
+        musica.src = cancionNueva.src;
+        reproductormsg.innerText = `Reproduciendo: ${cancionNueva.descripcion}`;
+      }      
+    }
+
+    function reproductorVisibilidad(){
+      reproductor.classList.toggle("invisible");
+    }
+
+</script>
+</html>
