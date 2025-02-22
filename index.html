@@ -252,7 +252,7 @@
           } 
 
         return idea;
-      }
+    }
 
     function cambiarVolumen(valor) {
         let audio = document.getElementById('miAudio');
@@ -266,14 +266,15 @@
 
         for(let i = 0;i<canciones.length;i++){
           if(canciones[i].descripcion === cod ||canciones[i].cod === cod){
-            canciones.src = canciones[i].src;
-            parrafin.innerText = canciones[i].cod;
+            cancionNueva = canciones[i];
+            musica.src = cancionNueva.src;
+            reproductormsg.innerText = `Reproduciendo: ${cancionNueva.descripcion}`;
           }
+        }else{
+            cancionNueva = canciones[Math.floor(Math.random() * canciones.length)];
+            musica.src = cancionNueva.src;
+            reproductormsg.innerText = `Reproduciendo: ${cancionNueva.descripcion}`;
         }
-        cancionNueva = canciones[Math.floor(Math.random() * canciones.length)];
-        musica.src = cancionNueva.src;
-        reproductormsg.innerText = `Reproduciendo: ${cancionNueva.descripcion}`;
-      }      
     }
 
     function reproductorVisibilidad(){
