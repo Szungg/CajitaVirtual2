@@ -163,6 +163,8 @@
     </div>
     <div id="varios">
       <p></p>
+      <h2>Fecha Actual:</h2>
+      <p id="mensajito"></p>
       <button id="reproductor" onclick="reproductorVisibilidad()">Reproductor</button>
       <div id="musiquita" class="invisible">
           <video autoplay controls>
@@ -203,16 +205,24 @@
     { cod: 3, tema: "arcane", descripcion: "Every Breath You Take", src: 'Videos/The Police - Every Breath You Take (Official Music Video).mp4' },
     { cod: 4, tema: "random", descripcion: "Lost in Dreams", src: 'Audios/lost-in-dreams-abstract-chill-downtempo-cinematic-future-beats-270241.mp3' },
     //Agregar canciones 
-    ]
+    ];
 
     let imagenAux = [
     { cod: "999", tema: "vacio", descripcion: "No quedan imagenes", src: 'Imagenes/dibujo-lapiz-hojas-papel-vintage-fondo-dibujo-artistico-ilustracion-naturaleza_94064-45331.jpg' },
     ];
+    
     let imagen = document.querySelector("#idea");
     let parrafin = document.querySelector("p");
     let musica = document.querySelector("audio");
     let reproductor = document.querySelector("#musiquita");
     let reproductormsg = document.querySelector("p#reproduciendo");
+    let mensajesVarios = document.querySelector("p#mensajito");
+    const fechaActual = new Date();
+    const dia = fechaActual.getDate();
+    const mes = fechaActual.getMonth() + 1; 
+    if(dia === 24 && mes ===2){
+        mensajesVarios.innerText = "Hoy es el cumple de Raquel, debería felicitarla?";
+    }
 
     function generarImagen(){
         let nuevaIdea = obtenerIdea();
